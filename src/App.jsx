@@ -5,7 +5,7 @@ export default function App() {
   const [end, setEnd] = useState(0);
   const [file, setFile] = useState(null);
   const handleConvert = async () => {
-    const res = await fetch("https://ezconv-backend-2.onrender.com/", {
+    const res = await fetch("https://ezconv-backend-2.onrender.com/convert", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ url, start_time: Number(start), end_time: Number(end) })
