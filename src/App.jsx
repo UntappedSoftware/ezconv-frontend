@@ -6,7 +6,8 @@ export default function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const backendURL = process.env.REACT_APP_BACKEND_URL;
+  // Ensure no trailing slash in backend URL
+  const backendURL = process.env.REACT_APP_BACKEND_URL?.replace(/\/+$/, "");
 
   const handleConvert = async () => {
     if (!url) {
